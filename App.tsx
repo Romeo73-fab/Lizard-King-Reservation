@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { HashRouter, Routes, Route, Link } from 'react-router-dom';
 import { Home } from './pages/Home';
 import { Booking } from './pages/Booking';
@@ -22,7 +22,7 @@ const App: React.FC = () => {
                 <div className="bg-amber-500 p-2 rounded-lg group-hover:rotate-12 transition-transform">
                   <Music className="w-6 h-6 text-black" />
                 </div>
-                <span className="text-2xl font-anton tracking-wider text-white">LIZARD KING</span>
+                <span className="text-2xl font-anton tracking-wider text-white">THE LIZARD KING</span>
               </Link>
 
               {/* Desktop Nav */}
@@ -70,14 +70,14 @@ const App: React.FC = () => {
           <div className="max-w-7xl mx-auto px-4 text-center">
             <h3 className="font-rock text-amber-500 text-xl mb-4">"Keep on Knocking"</h3>
             <p className="text-zinc-500 max-w-md mx-auto mb-6">
-              Lizard King Bar - Le temple du Blues & Rock. <br/>
+              THE LIZARD KING Bar - Le temple du Blues & Rock. <br/>
               Live sessions tous les vendredis et samedis soir de 22h30 à 02h00.
             </p>
             <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-12 text-zinc-400 mb-8">
               <span className="flex items-center gap-2"><MapPin className="w-4 h-4 text-amber-500" /> {LOCATION}</span>
               <span className="flex items-center gap-2"><Phone className="w-4 h-4 text-amber-500" /> {ADMIN_PHONE}</span>
             </div>
-            <p className="text-xs text-zinc-600">© 2024 Lizard King Bar. Tous droits réservés.</p>
+            <p className="text-xs text-zinc-600">© 2024 THE LIZARD KING Bar. Tous droits réservés.</p>
           </div>
         </footer>
       </div>

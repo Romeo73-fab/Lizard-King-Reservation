@@ -61,7 +61,7 @@ export const Home: React.FC = () => {
               <Zap className="w-8 h-8 text-amber-500" />
             </div>
             <h3 className="text-2xl font-anton mb-4">Ambiance Électrique</h3>
-            <p className="text-zinc-400">Un décor rock’n’roll immersif inspiré du légendaire Jim Morrison.</p>
+            <p className="text-zinc-400">Un décor rock’n’roll immersif inspiré du légendaire Jim Morrison au sein de THE LIZARD KING.</p>
           </div>
         </div>
       </section>

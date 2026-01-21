@@ -27,8 +27,7 @@ export const Confirmation: React.FC = () => {
     );
   }
 
-  // Simulated QR Code URL (in a real app, use a library like qrcode.react)
-  // We use a QR Generator API for this functional demo
+  // Simulated QR Code URL
   const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${res.id}`;
 
   return (
@@ -38,12 +37,11 @@ export const Confirmation: React.FC = () => {
           <CheckCircle2 className="w-12 h-12 text-green-500" />
         </div>
         <h1 className="text-4xl font-anton mb-2">PAIEMENT CONFIRMÉ</h1>
-        <p className="text-zinc-400">Votre réservation pour le Lizard King est validée !</p>
+        <p className="text-zinc-400">Votre réservation pour THE LIZARD KING est validée !</p>
       </div>
 
       <div className="bg-white text-black rounded-3xl overflow-hidden shadow-2xl">
         <div className="p-8 border-b-2 border-dashed border-zinc-200 relative">
-          {/* Decorative circles for ticket effect */}
           <div className="absolute -bottom-4 -left-4 w-8 h-8 bg-zinc-950 rounded-full"/>
           <div className="absolute -bottom-4 -right-4 w-8 h-8 bg-zinc-950 rounded-full"/>
           

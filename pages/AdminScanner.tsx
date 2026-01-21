@@ -27,7 +27,7 @@ export const AdminScanner: React.FC = () => {
 
     db.updateStatus(id, BookingStatus.USED);
     setReservations(db.getReservations());
-    setMessage({ text: `Réservation n°${id} confirmée – Accès autorisé. Bienvenue au Lizard King !`, type: 'success' });
+    setMessage({ text: `Réservation n°${id} confirmée – Accès autorisé. Bienvenue au THE LIZARD KING !`, type: 'success' });
     
     // Auto clear message after 5 seconds
     setTimeout(() => setMessage({ text: '', type: null }), 5000);

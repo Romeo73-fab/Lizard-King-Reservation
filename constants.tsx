@@ -26,13 +26,13 @@ export const getConfirmationEmailHTML = (res: any) => `
 <body>
     <div class="container">
         <div class="header">
-            <h1 style="margin:0; font-size: 28px;">LIZARD KING BAR</h1>
+            <h1 style="margin:0; font-size: 28px;">THE LIZARD KING BAR</h1>
             <p style="margin:10px 0 0 0; letter-spacing: 2px;">${SLOGAN}</p>
         </div>
         <div class="content">
             <h2 style="color: #000;">Réservation Confirmée !</h2>
             <p>Bonjour <strong>${res.fullName}</strong>,</p>
-            <p>Votre accès pour la soirée live au Lizard King a été validé avec succès.</p>
+            <p>Votre accès pour la soirée live au THE LIZARD KING a été validé avec succès.</p>
             
             <div class="details">
                 <p style="margin: 5px 0;"><strong>Ticket ID :</strong> ${res.id}</p>
@@ -45,7 +45,7 @@ export const getConfirmationEmailHTML = (res: any) => `
             <p style="font-size: 14px; color: #666;">Veuillez présenter votre QR Code à votre arrivée.</p>
         </div>
         <div class="footer">
-            <p>Lizard King Bar | Fidjossè | 📞 ${ADMIN_PHONE}</p>
+            <p>THE LIZARD KING Bar | Fidjossè | 📞 ${ADMIN_PHONE}</p>
         </div>
     </div>
 </body>
