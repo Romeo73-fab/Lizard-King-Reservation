@@ -1,0 +1,7 @@
+{
+  "name": "Lizard King - Blues & Rock Bar",
+  "description": "A professional reservation and payment system for the Lizard King bar, featuring Paystack integration, QR code generation, and a digital check-in system for events.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
