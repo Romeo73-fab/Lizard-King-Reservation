@@ -37,11 +37,11 @@ const App: React.FC = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between h-20">
               <Link to="/" className="flex items-center space-x-3 group" onClick={() => setIsMenuOpen(false)}>
-                {/* Logo Image */}
+                {/* Logo Image avec chemin racine */}
                 <img 
-                  src="logo.png" 
+                  src="logo1.jpg" 
                   alt="Lizard King Logo" 
-                  className="h-12 w-auto object-contain group-hover:rotate-6 transition-transform drop-shadow-[0_0_10px_rgba(220,38,38,0.3)]" 
+                  className="h-14 w-auto object-contain group-hover:rotate-6 transition-transform drop-shadow-[0_0_10px_rgba(220,38,38,0.3)]" 
                 />
                 <span className="text-2xl font-anton tracking-wider text-white uppercase">
                   THE LIZARD <span className="text-red-600">KING</span>
@@ -107,8 +107,8 @@ const App: React.FC = () => {
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[300px] h-[200px] bg-[radial-gradient(circle,_rgba(255,255,255,0.15)_0%,_rgba(245,158,11,0.1)_30%,_transparent_70%)] blur-[40px] pointer-events-none z-0 mix-blend-screen"></div>
 
           {/* Filigrane AMBO - Horizontal & Rock Font */}
-          <div className="absolute bottom-[-20%] md:bottom-[-30%] left-1/2 -translate-x-1/2 w-full text-center pointer-events-none select-none opacity-[0.1] z-0">
-             <span className="font-rock text-red-600 text-[8rem] md:text-[16rem] leading-none block whitespace-nowrap">AMBO</span>
+          <div className="absolute bottom-[-5%] md:bottom-[-30%] left-1/2 -translate-x-1/2 w-full text-center pointer-events-none select-none opacity-[0.1] z-0">
+             <span className="font-rock text-red-600 text-[25vw] md:text-[16rem] leading-none block whitespace-nowrap">AMBO</span>
           </div>
 
           <div className="max-w-7xl mx-auto px-4 text-center relative z-10">
