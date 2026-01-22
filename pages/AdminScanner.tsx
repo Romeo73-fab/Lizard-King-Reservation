@@ -27,9 +27,8 @@ export const AdminScanner: React.FC = () => {
 
     db.updateStatus(id, BookingStatus.USED);
     setReservations(db.getReservations());
-    setMessage({ text: `Réservation n°${id} confirmée – Accès autorisé. Bienvenue au THE LIZARD KING !`, type: 'success' });
+    setMessage({ text: `Réservation n°${id} confirmée – Accès autorisé. Bienvenue au Lizard King !`, type: 'success' });
     
-    // Auto clear message after 5 seconds
     setTimeout(() => setMessage({ text: '', type: null }), 5000);
   };
 
@@ -42,8 +41,8 @@ export const AdminScanner: React.FC = () => {
     <div className="max-w-6xl mx-auto px-4 py-12">
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-12">
         <div>
-          <h1 className="text-4xl font-anton text-white">CONTRÔLE D'ACCÈS</h1>
-          <p className="text-zinc-500">Gestion des réservations et validation des entrées.</p>
+          <h1 className="text-4xl font-anton text-white uppercase tracking-tight">Contrôle d'accès</h1>
+          <p className="text-zinc-500">Validation des entrées en temps réel.</p>
         </div>
         
         <div className="relative w-full md:w-96">
@@ -53,12 +52,11 @@ export const AdminScanner: React.FC = () => {
             placeholder="Scannez ou saisissez l'ID..." 
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full bg-zinc-900 border border-zinc-800 rounded-2xl py-4 pl-12 pr-4 focus:ring-2 focus:ring-amber-500 outline-none transition-all"
+            className="w-full bg-zinc-900 border border-zinc-800 rounded-2xl py-4 pl-12 pr-4 focus:ring-2 focus:ring-amber-500 outline-none transition-all text-white"
           />
         </div>
       </div>
 
-      {/* Real-time scan message alert */}
       {message.type && (
         <div className={`mb-8 p-6 rounded-2xl flex items-center gap-4 animate-in fade-in slide-in-from-top-4 duration-500 ${
           message.type === 'success' ? 'bg-green-500/10 border border-green-500/50 text-green-500' : 'bg-red-500/10 border border-red-500/50 text-red-500'
@@ -68,8 +66,7 @@ export const AdminScanner: React.FC = () => {
         </div>
       )}
 
-      {/* Reservations Table */}
-      <div className="bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden">
+      <div className="bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden shadow-xl">
         <div className="overflow-x-auto">
           <table className="w-full text-left">
             <thead>
@@ -84,7 +81,7 @@ export const AdminScanner: React.FC = () => {
             <tbody className="divide-y divide-zinc-800">
               {filtered.length === 0 ? (
                 <tr>
-                  <td colSpan={5} className="px-6 py-12 text-center text-zinc-500">Aucune réservation trouvée.</td>
+                  <td colSpan={5} className="px-6 py-12 text-center text-zinc-500 italic">Aucune réservation trouvée.</td>
                 </tr>
               ) : (
                 filtered.map(res => (
@@ -98,19 +95,18 @@ export const AdminScanner: React.FC = () => {
                       <div className="text-xs text-zinc-500">{res.phone}</div>
                     </td>
                     <td className="px-6 py-4">
-                      <div className="flex items-center gap-1">
-                        <span className="font-bold">{res.guests}</span>
-                        <span className="text-zinc-500 text-xs">pers.</span>
+                      <div className="flex items-center gap-1 font-bold">
+                        {res.guests} <span className="text-zinc-500 text-[10px] uppercase font-normal">pers.</span>
                       </div>
                     </td>
                     <td className="px-6 py-4">
                       {res.status === BookingStatus.USED ? (
-                        <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-zinc-800 text-zinc-400 text-xs font-bold rounded-full">
-                          <XCircle className="w-3 h-3" /> UTILISÉ
+                        <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-zinc-800 text-zinc-500 text-[10px] font-black rounded-full uppercase">
+                          <XCircle className="w-3 h-3" /> Utilisé
                         </span>
                       ) : (
-                        <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-green-500/10 text-green-500 text-xs font-bold rounded-full">
-                          <Clock className="w-3 h-3" /> VALIDE
+                        <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-green-500/10 text-green-500 text-[10px] font-black rounded-full uppercase">
+                          <Clock className="w-3 h-3" /> Valide
                         </span>
                       )}
                     </td>
@@ -118,13 +114,13 @@ export const AdminScanner: React.FC = () => {
                       <button 
                         onClick={() => handleCheckIn(res.id)}
                         disabled={res.status === BookingStatus.USED}
-                        className={`px-4 py-2 rounded-lg font-bold text-xs transition-all ${
+                        className={`px-4 py-2 rounded-lg font-bold text-xs transition-all uppercase tracking-tighter ${
                           res.status === BookingStatus.USED 
                             ? 'bg-zinc-800 text-zinc-600 cursor-not-allowed' 
                             : 'bg-amber-600 hover:bg-amber-500 text-black active:scale-95'
                         }`}
                       >
-                        VALIDER L'ENTRÉE
+                        Valider l'entrée
                       </button>
                     </td>
                   </tr>

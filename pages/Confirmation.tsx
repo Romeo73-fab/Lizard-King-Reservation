@@ -27,7 +27,6 @@ export const Confirmation: React.FC = () => {
     );
   }
 
-  // Simulated QR Code URL
   const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${res.id}`;
 
   return (
@@ -37,7 +36,7 @@ export const Confirmation: React.FC = () => {
           <CheckCircle2 className="w-12 h-12 text-green-500" />
         </div>
         <h1 className="text-4xl font-anton mb-2">PAIEMENT CONFIRMÉ</h1>
-        <p className="text-zinc-400">Votre réservation pour THE LIZARD KING est validée !</p>
+        <p className="text-zinc-400">Votre réservation pour Lizard King est validée !</p>
       </div>
 
       <div className="bg-white text-black rounded-3xl overflow-hidden shadow-2xl">
@@ -74,7 +73,7 @@ export const Confirmation: React.FC = () => {
             <img src={qrUrl} alt="QR Code" className="w-48 h-48" />
           </div>
           <p className="text-sm text-zinc-500 text-center max-w-xs mb-8">
-            Présentez ce QR Code à l'entrée du bar. Il sera scanné pour valider votre accès.
+            Présentez ce QR Code à l'entrée du bar pour valider votre accès.
           </p>
           <div className="flex gap-4 w-full">
             <button 
@@ -88,13 +87,6 @@ export const Confirmation: React.FC = () => {
             </button>
           </div>
         </div>
-      </div>
-
-      <div className="mt-12 p-6 bg-zinc-900/50 border border-zinc-800 rounded-2xl text-center">
-        <p className="text-zinc-400 text-sm">
-          Un email de confirmation contenant votre ticket a été envoyé à 
-          <span className="text-amber-500 font-bold ml-1">{res.email}</span>.
-        </p>
       </div>
     </div>
   );
