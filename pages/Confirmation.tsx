@@ -19,8 +19,8 @@ export const Confirmation: React.FC = () => {
   if (!res) {
     return (
       <div className="flex flex-col items-center justify-center min-h-[60vh] px-4">
-        <h2 className="text-2xl font-anton mb-4">Réservation introuvable</h2>
-        <Link to="/" className="text-amber-500 flex items-center gap-2">
+        <h2 className="text-2xl font-anton mb-4 uppercase">Réservation introuvable</h2>
+        <Link to="/" className="text-amber-500 flex items-center gap-2 hover:underline">
           <ArrowLeft className="w-4 h-4" /> Retour à l'accueil
         </Link>
       </div>
@@ -35,7 +35,7 @@ export const Confirmation: React.FC = () => {
         <div className="inline-flex items-center justify-center w-20 h-20 bg-green-500/20 rounded-full mb-6">
           <CheckCircle2 className="w-12 h-12 text-green-500" />
         </div>
-        <h1 className="text-4xl font-anton mb-2">PAIEMENT CONFIRMÉ</h1>
+        <h1 className="text-4xl font-anton mb-2 uppercase">PAIEMENT CONFIRMÉ</h1>
         <p className="text-zinc-400">Votre réservation pour Lizard King est validée !</p>
       </div>
 
@@ -47,10 +47,10 @@ export const Confirmation: React.FC = () => {
           <div className="flex justify-between items-start mb-8">
             <div>
               <p className="text-xs font-bold text-zinc-500 uppercase tracking-widest mb-1">Pass Invité</p>
-              <h2 className="text-2xl font-anton text-zinc-900">{res.fullName}</h2>
+              <h2 className="text-2xl font-anton text-zinc-900 uppercase">{res.fullName}</h2>
             </div>
             <div className="text-right">
-              <p className="text-xs font-bold text-zinc-500 uppercase tracking-widest mb-1">ID Réservation</p>
+              <p className="text-xs font-bold text-zinc-500 uppercase tracking-widest mb-1">ID Ticket</p>
               <p className="font-mono font-bold text-lg">{res.id}</p>
             </div>
           </div>
@@ -62,7 +62,7 @@ export const Confirmation: React.FC = () => {
               <p className="font-bold text-zinc-800">{res.time}</p>
             </div>
             <div>
-              <p className="text-xs font-bold text-zinc-400 uppercase tracking-widest mb-1">Personnes</p>
+              <p className="text-xs font-bold text-zinc-400 uppercase tracking-widest mb-1">Quantité</p>
               <p className="font-bold text-zinc-800">{res.guests} Adulte(s)</p>
             </div>
           </div>

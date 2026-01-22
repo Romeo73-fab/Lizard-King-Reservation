@@ -27,7 +27,7 @@ export const AdminScanner: React.FC = () => {
 
     db.updateStatus(id, BookingStatus.USED);
     setReservations(db.getReservations());
-    setMessage({ text: `Réservation n°${id} confirmée – Accès autorisé. Bienvenue au Lizard King !`, type: 'success' });
+    setMessage({ text: `Réservation n°${id} confirmée – Accès autorisé. Bienvenue au bar !`, type: 'success' });
     
     setTimeout(() => setMessage({ text: '', type: null }), 5000);
   };
@@ -41,8 +41,8 @@ export const AdminScanner: React.FC = () => {
     <div className="max-w-6xl mx-auto px-4 py-12">
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-12">
         <div>
-          <h1 className="text-4xl font-anton text-white uppercase tracking-tight">Contrôle d'accès</h1>
-          <p className="text-zinc-500">Validation des entrées en temps réel.</p>
+          <h1 className="text-4xl font-anton text-white uppercase tracking-tight">Scanner d'entrée</h1>
+          <p className="text-zinc-500">Validation des accès en temps réel.</p>
         </div>
         
         <div className="relative w-full md:w-96">
@@ -52,13 +52,13 @@ export const AdminScanner: React.FC = () => {
             placeholder="Scannez ou saisissez l'ID..." 
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full bg-zinc-900 border border-zinc-800 rounded-2xl py-4 pl-12 pr-4 focus:ring-2 focus:ring-amber-500 outline-none transition-all text-white"
+            className="w-full bg-zinc-900 border border-zinc-800 rounded-2xl py-4 pl-12 pr-4 focus:ring-2 focus:ring-amber-500 outline-none transition-all text-white font-mono"
           />
         </div>
       </div>
 
       {message.type && (
-        <div className={`mb-8 p-6 rounded-2xl flex items-center gap-4 animate-in fade-in slide-in-from-top-4 duration-500 ${
+        <div className={`mb-8 p-6 rounded-2xl flex items-center gap-4 animate-in fade-in slide-in-from-top-4 duration-500 shadow-2xl ${
           message.type === 'success' ? 'bg-green-500/10 border border-green-500/50 text-green-500' : 'bg-red-500/10 border border-red-500/50 text-red-500'
         }`}>
           {message.type === 'success' ? <CheckCircle className="w-8 h-8 shrink-0" /> : <AlertCircle className="w-8 h-8 shrink-0" />}
@@ -81,22 +81,22 @@ export const AdminScanner: React.FC = () => {
             <tbody className="divide-y divide-zinc-800">
               {filtered.length === 0 ? (
                 <tr>
-                  <td colSpan={5} className="px-6 py-12 text-center text-zinc-500 italic">Aucune réservation trouvée.</td>
+                  <td colSpan={5} className="px-6 py-12 text-center text-zinc-500 italic">Aucune réservation à afficher.</td>
                 </tr>
               ) : (
                 filtered.map(res => (
                   <tr key={res.id} className="hover:bg-zinc-800/30 transition-colors">
                     <td className="px-6 py-4">
                       <div className="font-mono text-amber-500 font-bold">{res.id}</div>
-                      <div className="text-xs text-zinc-500 mt-1">{res.date} @ {res.time}</div>
+                      <div className="text-xs text-zinc-500 mt-1 font-bold">{res.date} @ {res.time}</div>
                     </td>
                     <td className="px-6 py-4">
-                      <div className="font-bold">{res.fullName}</div>
+                      <div className="font-bold text-white uppercase">{res.fullName}</div>
                       <div className="text-xs text-zinc-500">{res.phone}</div>
                     </td>
                     <td className="px-6 py-4">
                       <div className="flex items-center gap-1 font-bold">
-                        {res.guests} <span className="text-zinc-500 text-[10px] uppercase font-normal">pers.</span>
+                        {res.guests} <span className="text-zinc-500 text-[10px] uppercase">pers.</span>
                       </div>
                     </td>
                     <td className="px-6 py-4">

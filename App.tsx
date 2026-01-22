@@ -19,10 +19,10 @@ const App: React.FC = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between h-20">
               <Link to="/" className="flex items-center space-x-2 group" onClick={() => setIsMenuOpen(false)}>
-                <div className="bg-amber-500 p-2 rounded-lg group-hover:rotate-12 transition-transform">
+                <div className="bg-amber-500 p-2 rounded-lg group-hover:rotate-12 transition-transform shadow-[0_0_15px_rgba(245,158,11,0.3)]">
                   <Music className="w-6 h-6 text-black" />
                 </div>
-                <span className="text-2xl font-anton tracking-wider text-white">Lizard King</span>
+                <span className="text-2xl font-anton tracking-wider text-white uppercase">THE LIZARD KING</span>
               </Link>
 
               {/* Desktop Nav */}
@@ -65,11 +65,11 @@ const App: React.FC = () => {
           </Routes>
         </main>
 
-        {/* Footer */}
+        {/* Footer Restored to Classic State */}
         <footer className="bg-zinc-900 border-t border-zinc-800 py-12 mt-auto">
           <div className="max-w-7xl mx-auto px-4 text-center">
             <h3 className="font-rock text-amber-500 text-xl mb-4">"{SLOGAN}"</h3>
-            <p className="text-zinc-500 max-w-md mx-auto mb-6">
+            <p className="text-zinc-500 max-w-md mx-auto mb-6 leading-relaxed">
               Lizard King Bar - Le temple du Blues & Rock. <br/>
               Live sessions tous les vendredis et samedis soir de 22h30 à 02h00.
             </p>
