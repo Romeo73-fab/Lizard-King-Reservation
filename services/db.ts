@@ -34,11 +34,12 @@ export const db = {
   }
 };
 
-// Intégration Backend Sécurisée (Les clés secrètes sont gérées par le PHP)
+// A parti d'ici c'est serieux 
+
+
 const API_URL = "https://lkreservation-api.rf.gd/lkreservation-backend/api";
 
 export async function payReservation(reference: string, email: string) {
-  // Cette fonction communique avec le serveur qui, lui seul, détient la clé secrète FedaPay.
   const response = await fetch(`${API_URL}/pay-reservation.php`, {
     method: "POST",
     headers: {
