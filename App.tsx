@@ -122,8 +122,10 @@ const App: React.FC = () => {
 
         {/* Footer */}
         <footer className="bg-zinc-50 dark:bg-zinc-900 border-t border-zinc-100 dark:border-zinc-800 py-16 mt-auto relative z-10 overflow-hidden transition-colors">
-          <div className="absolute bottom-[-10%] left-1/2 -translate-x-1/2 w-full text-center pointer-events-none select-none opacity-[0.03] dark:opacity-[0.05] z-0">
-             <span className="font-rock text-red-600 text-[20vw] leading-none block whitespace-nowrap uppercase">AMBO</span>
+          
+          {/* Filigrane AMBO optimisé pour mobile */}
+          <div className="absolute bottom-[5%] md:bottom-[-5%] left-1/2 -translate-x-1/2 w-full text-center pointer-events-none select-none opacity-[0.07] dark:opacity-[0.1] z-0 transition-all duration-500">
+             <span className="font-rock text-red-600 text-[25vw] md:text-[20vw] leading-none block whitespace-nowrap uppercase">AMBO</span>
           </div>
 
           <div className="max-w-7xl mx-auto px-4 text-center relative z-10">
