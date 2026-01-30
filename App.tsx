@@ -53,12 +53,7 @@ const App: React.FC = () => {
         <nav className="sticky top-0 z-50 bg-white/90 dark:bg-zinc-950/90 backdrop-blur-md border-b border-zinc-100 dark:border-zinc-800 shadow-sm">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between h-20">
-              <Link to="/" className="flex items-center space-x-3 group" onClick={() => setIsMenuOpen(false)}>
-                <img 
-                  src="logo.jpg" 
-                  alt="Lizard King Logo" 
-                  className="w-12 h-12 rounded-lg shadow-lg object-cover transition-transform duration-300 group-hover:scale-110" 
-                />
+                <Link to="/" className="flex items-center space-x-3 group" onClick={() => setIsMenuOpen( 🦎
                 <span className="text-2xl font-anton tracking-wider text-black dark:text-white uppercase">
                   THE LIZARD <span className="text-red-600">KING</span>
                 </span>
