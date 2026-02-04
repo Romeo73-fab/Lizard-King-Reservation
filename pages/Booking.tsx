@@ -13,7 +13,7 @@ export const Booking: React.FC = () => {
     guests: 1,
     date: '',
     time: '22:30',
-    table: 'P1'
+    table: 'P1 (RDC)'
   });
 
   // URL FedaPay mise à jour par l'utilisateur
@@ -189,7 +189,12 @@ export const Booking: React.FC = () => {
                   </label>
                   <div className="relative">
                     <select name="table" value={formData.table} onChange={handleChange} className={inputClass} >
-                      {['P1', 'P2', 'P3', 'P4'].map(t => <option key={t} value={t}>{t}</option>)}
+                      <optgroup label="Rez-de-chaussée">
+                        {['P1', 'P2', 'P3', 'P4'].map(t => <option key={`RDC-${t}`} value={`${t} (RDC)`}>{t}</option>)}
+                      </optgroup>
+                      <optgroup label="Étage">
+                         {['P1', 'P2', 'P3', 'P4'].map(t => <option key={`ETAGE-${t}`} value={`${t} (Étage)`}>{t}</option>)}
+                      </optgroup>
                     </select>
                     <ChevronDown className="absolute right-5 top-1/2 -translate-y-1/2 text-zinc-400 w-5 h-5 pointer-events-none" />
                   </div>
